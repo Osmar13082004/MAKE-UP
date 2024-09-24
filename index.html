@@ -5,21 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Blog de Maquillaje</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-YQ3S3QGFKK"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      gtag("js", new Date());
 
-      gtag("config", "G-YQ3S3QGFKK");
-    </script>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8e6f0;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #ffccdd;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        color: #ff6699;
+      }
+
+      header p {
+        color: #555;
+      }
+
+      nav {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      nav a {
+        margin: 0 15px;
+        color: #ff6699;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        margin: 20px;
+        display: none;
+      }
+
+      section.active {
+        display: block;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dos productos por fila */
+        gap: 20px;
+      }
+
+      .product {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        max-width: 100%;
+        height: 150px;
+        border-radius: 8px;
+      }
+
+      .product h3 {
+        color: #ff6699;
+        margin: 10px 0;
+      }
+
+      .product p {
+        color: #666;
+      }
+
+      .color-selector {
+        margin-top: 10px;
+      }
+
+      footer {
+        background-color: #ffccdd;
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      footer p {
+        color: #555;
+      }
+
+      .social-links a {
+        color: #ff6699;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .social-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -27,97 +119,140 @@
       <p>Descubre los mejores productos de maquillaje en tonos rosado pastel</p>
     </header>
 
-    <section class="product-list">
-      <h2>Productos Destacados</h2>
+    <!-- Navegación para cambiar entre categorías -->
+    <nav>
+      <a href="#" data-category="gloss">Gloss</a>
+      <a href="#" data-category="labiales">Labiales</a>
+      <a href="#" data-category="sombras">Sombras</a>
+      <a href="#" data-category="blush">Blush</a>
+    </nav>
+
+    <!-- Sección para la categoría "Gloss" -->
+    <section id="gloss" class="active">
+      <h2>Gloss</h2>
       <div class="products">
         <div class="product">
-          <img
-          src="https://es.lorealparisusa.com/-/media/project/loreal/brand-sites/oap/americas/us/beauty-magazine/slideshows/pink-lipstick-by-skin-tone/loreal-paris-bmag-slideshow-our-20-best-pink-lipsticks-for-every-skin-tone-slide10.jpg?rev=ca112205f0584ac0ab0b9866513331a2&cx=0.49&cy=0.54&cw=1510&ch=815&hash=E1E88DE98723C6BE585B100CAAD8972721B42B09"
-          alt="Producto 1" / height="150" width="150">
-          <h3>Labial Rosado Suave</h3>
-          <p>Tonalidad: Rosa Claro</p>
+          <img id="gloss1-img" src="https://www.byrdie.com/thmb/QVm8RW5WA8RN5DkR0JiR5nI5ClU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mac-squirt-lip-f79600cfce63419b98b6a24ff147aa74.png" alt="Gloss Rosa" />
+          <h3>Gloss con Efecto Plump</h3>
         </div>
         <div class="product">
-          <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV8tFEO-3lz1bNeInUm537QI9WnxHTGVcEDQ&s"
-          alt="Producto 2" / height="150" width="150">
-          <h3>Sombra de Ojos Pastel</h3>
-          <p>Tonalidad: Rosa Pastel</p>
+          <img id="gloss2-img" src="https://dimg.dillards.com/is/image/DillardsZoom/mainProduct/mac-squirt-lip-plumping-gloss-stick/00000000_zi_55c48d4b-6726-45de-ab83-726c23846013.jpg" alt="Gloss Rosa" />
+          <h3>Gloss Transparente</h3>
         </div>
         <div class="product">
-          <img
-          src="https://m.media-amazon.com/images/I/6111kdXt1SL._AC_UF1000,1000_QL80_.jpg"
-          alt="Producto 3" / height="150" width="150">
-          <h3>Blush Rosado Natural</h3>
-          <p>Tonalidad: Rosa Durazno</p>
+            <img id="gloss1-img" src="https://dimg.dillards.com/is/image/DillardsZoom/mainProduct/mac-squirt-lip-plumping-gloss-stick/00000000_zi_5981ebb8-b915-418e-bd8d-0898b660fd9f.jpg" alt="Gloss Rosa" />
+            <h3>Gloss con Color Intenso</h3>
+          </div>
+          <div class="product">
+            <img id="gloss2-img" src="https://cosmechic.fr/25433-large_default/coleccion-de-gloss-metalico-nude.jpg" alt="Gloss Rosa" />
+            <h3>Gloss Brillo Metalico</h3>
+          </div>
+    </section>
+
+    <!-- Sección para la categoría "Labiales" -->
+    <section id="labiales">
+      <h2>Labiales</h2>
+      <div class="products">
+        <div class="product">
+          <img id="labial1-img" src="https://siman.vtexassets.com/arquivos/ids/370789/773602040605_ruby_woo.jpg?v=637250973538200000" alt="Labial Rojo" />
+          <h3>Labial Rojo Intenso</h3>
         </div>
         <div class="product">
-          <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6ADSrKx80hv5jHJ9NoXPzw6BYMkSa0W0nlA&s"
-          alt="Producto 4" / height="150" width="150">
-          <h3>Delineador en Gel</h3>
-          <p>Tonalidad: Rosa Fucsia</p>
+            <img id="labial1-img" src="https://myvaniteecase.com/cdn/shop/products/38.gif?v=1607047741" alt="Labial Rojo" />
+            <h3>Labial Rosa Suave</h3>
+          </div>
+          <div class="product">
+            <img id="labial1-img" src="https://gb.static.quickcommerce.org/imageProxy?path=aHR0cHM6Ly9nYi5zdGF0aWMucXVpY2tjb21tZXJjZS5vcmcvcHJvZHVjdHMvOGQ4OTg3MGMtY2ZjYy00YmFmLThjNDgtMzg4ZDc1MzU2MjBlLmpwZw==&height=409.6" alt="Labial Rojo" />
+            <h3>Labial Nude</h3>
+          </div>
+          <div class="product">
+            <img id="labial1-img" src="https://m.media-amazon.com/images/I/61opIV5bZvL.jpg" alt="Labial Rojo" />
+            <h3>Labial Vino Profundo</h3>
+          </div>
+    </section>
+
+    <!-- Sección para la categoría "Sombras" -->
+    <section id="sombras">
+      <h2>Sombras</h2>
+      <div class="products">
+        <div class="product">
+          <img id="sombra1-img" src="https://e00-telva.uecdn.es/assets/multimedia/imagenes/2021/11/08/16363729376467.jpg" alt="Sombra Pastel" />
+          <h3>Sombra en crema</h3>
         </div>
         <div class="product">
-          <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQimmF83I2d4uE3OE2CD-OdD5VJdyhfqHuhzQ&s"
-          alt="Producto 5" / height="150" width="150">
-          <h3>Paleta de Sombras</h3>
-          <p>Tonalidad: Rosa Pastel Brillante</p>
+          <img id="sombra2-img" src="https://carlaasmus.com/image/cache/catalog/demo/pigmentos/chill-800x800.jpg" alt="Sombra Dorada" />
+          <h3>Sombra en polvo</h3>
         </div>
         <div class="product">
-          <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfd0z5HyXg1AtcfbXbIygBSCWFowbXqqWGQA&s"
-          alt="Producto 6" / height="150" width="150" >
-          <h3>Polvo Compacto</h3>
-          <p>Tonalidad: Rosa Suave</p>
+            <img id="sombra1-img" src="https://sdcdn.io/mac/br/mac_sku_SCAW05_1x1_0.png?width=1080&height=1080" />
+            <h3>Sombra liquida</h3>
+          </div>
+          <div class="product">
+            <img id="sombra2-img" src="https://static-pu.salcobrandonline.cl/images/spree/images/52403/attachments/large/product-images_583736.jpg?1677589508" />
+            <h3>Sombra en lapiz</h3>
+          </div>
+      </div>
+    </section>
+
+    <!-- Sección para la categoría "Blush" -->
+    <section id="blush">
+      <h2>Blush</h2>
+      <div class="products">
+        <div class="product">
+          <img id="blush1-img" src="https://www.sephora.com.mx/on/demandware.static/-/Sites-masterCatalog_Sephora/es_MX/dwe8d77fca/images/hi-res/boletos/Roc%C3%ADo%20Mart%C3%ADnez/RARE%20BEAUTY/840122906596_1.jpg" alt="Blush Natural" />
+          <h3>Blush en polvo</h3>
         </div>
         <div class="product">
-          <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxjK7SqNTDXF8zUJRmaJPFo3Ps5MWwbiYBZw&s"
-          alt="Producto 7" / height="150" width="150">
-          <h3>Iluminador Líquido</h3>
-          <p>Tonalidad: Rosa Perlado</p>
+          <img id="blush2-img" src="https://www.collarela.com/cdn/shop/files/image_4106ff2e-41a3-4cf6-8884-e0104375c095_1200x1200.jpg?v=1688883041" alt="Blush Durazno" />
+          <h3>Blush en crema</h3>
         </div>
         <div class="product">
-          <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwBQS5F6YCJjR_KoITAy7KeHOa6re6dgZRHw&s"
-          alt="Producto 8" / height="150" width="150">
-          <h3>Corrector Cremoso</h3>
-          <p>Tonalidad: Rosa Natural</p>
-        </div>
-        <div class="product">
-          <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_FoYfVxV_D7-dpwKjYna3NhNNlcmKfFBt5g&s"
-          alt="Producto 9" / height="150" width="150">
-          <h3>Brillo Labial</h3>
-          <p>Tonalidad: Rosa Neón</p>
-        </div>
-        <div class="product">
-          <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpjo8zelTnbJ-aQE6oFsBPEf8fU1vnTK6jPg&s"
-          alt="Producto 10" / height="150" width="150">
-          <h3>Base Fluida</h3>
-          <p>Tonalidad: Rosa Melocotón</p>
-        </div>
+            <img id="blush1-img" src="https://lucesbeautiful.com/wp-content/uploads/2022/09/03G-302.jpg" alt="Blush Natural" />
+            <h3>Blush liquido</h3>
+          </div>
+          <div class="product">
+            <img id="blush2-img" src="https://www.pixibeauty.com/cdn/shop/products/sheercheekgelslider1_1_-sept2021_large.jpg?v=1701459216" alt="Blush Durazno" />
+            <h3>Blush en gel</h3>
+          </div>
       </div>
     </section>
 
     <footer>
-      <p>Síguenos en nuestras redes sociales:</p>
-      <div class="social-links">
-        <a
-          href="https://www.instagram.com/moch.makeup?igsh=dHpwaWlhZnZobmcy&utm_source=qr"
-          target="_blank"
-          >Instagram</a
-        >
-        |
-        <a
-          href="https://www.facebook.com/profile.php?id=61565705091888&is_tour_dismissed"
-          target="_blank"
-          >Facebook</a
-        >
-      </div>
-    </footer>
+        <p>Síguenos en nuestras redes sociales:</p>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/moch.makeup?igsh=dHpwaWlhZnZobmcy&utm_source=qr"
+            target="_blank"
+            >Instagram</a
+          >
+          |
+          <a
+            href="https://www.facebook.com/profile.php?id=61565705091888&is_tour_dismissed"
+            target="_blank"
+            >Facebook</a
+          >
+        </div>
+      </footer>
+
+    <script>
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+          const category = this.getAttribute('data-category');
+
+          document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
+          });
+
+          document.getElementById(category).classList.add('active');
+        });
+      });
+
+      function changeImage(productId, color) {
+        const imageUrl = `https://example.com/${productId}-${color}.jpg`;
+        document.getElementById(`${productId}-img`).src = imageUrl;
+      }
+    </script>
   </body>
 </html>
+
